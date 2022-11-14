@@ -1,1 +1,1 @@
-# ERP - Leve Essências :octocat:
+# ERP :octocat:
