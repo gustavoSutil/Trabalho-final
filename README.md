@@ -6,4 +6,3 @@
 ### • cadastro de tabela de vendas
 ### • emitir pedido 
 ### • finalizar pedido
-
