@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('budgets', function (Blueprint $table) {
             $table->id();
+            $table->double('offer');
             $table->timestamps();
             $table->foreign('id_clients')->references('id')->on('clients');
         });

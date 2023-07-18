@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Budget extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['offer'];
+
+    public function client(){
+        return $this->hasOne(Client::class);
+    }
+
+    // criar data
 }

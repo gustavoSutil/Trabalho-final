@@ -12,7 +12,13 @@ class Item extends Model
     protected $fillable = [
     'unitary_price',
     'quantity',
-    'id_product',
-    'id_order',
-    ]
+    'id_order'
+    ];
+    
+    public function products() {
+        return $this->hasOne(Product::class);
+    }
+    public function budget(){
+        return $this->belongsTo(Budget::class);
+    }
 }

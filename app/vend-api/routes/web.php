@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\ProductController;
+use App\Models\Budget;
+use App\Models\Client;
+use App\Models\Item;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,11 +17,26 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route::prefix('product')->group(function(){
+//     Route::get('/list', [ProductController::class, 'list'])->name('list_product');
+//     Route::patch('/update/{data}/{value}', [ProductController::class, 'update'])->name('update_product');
+//     Route::post()->name('insert_product');
+// });
 
-Route::get('/', function () {
-    
-    $teste['name'] = 'content';
-    return json_encode($teste);
 
-    
-});
+// Route::prefix('client')->group(function(){
+//     Route::get('/list', [ClientController::class, 'list'])->name('list_client');
+//     Route::patch('/update/{data}/{value}', [ClientController::class, 'update'])->name('update_client');
+//     Route::post()->name('insert_client');
+// });
+
+// Route::prefix('item')->group(function(){
+//     Route::get('/list', [ItemController::class, 'list'])->name('list_item');
+//     Route::post()->name('insert_item');
+// });
+
+// Route::prefix('budget')->group(function(){
+//     Route::get('/list', [BudgetController::class, 'list'])->name('list_budget');
+//     Route::patch('/update', [BudgetController::class, 'update'])->name('update_budget');
+//     Route::post()->name('insert_budget');
+// });

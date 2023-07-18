@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\BudgetController;
+use App\Http\Controllers\Api\ClientController;
+use App\Http\Controllers\Api\ItemController;
+use App\Http\Controllers\Api\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('product',ProductController::class);
+Route::apiResource('budget',BudgetController::class);
+Route::apiResource('client',ClientController::class);
+Route::apiResource('itens',ItemController::class);
