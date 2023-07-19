@@ -3,16 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $product;
+
+    public function __construct(Product $product)
+    {
+        $this->product = $product;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $this->client = Client::query()->where('status','')
     }
 
     /**
