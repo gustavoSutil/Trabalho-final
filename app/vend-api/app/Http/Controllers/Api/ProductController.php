@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $this->client = Client::query()->where('status','')
+        $this->product = Product::query()->paginate();
     }
 
     /**
