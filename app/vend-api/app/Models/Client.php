@@ -25,4 +25,5 @@ class Client extends Model
         'observation',
         'status',
     ];
+    public $timestamps = false;
 }
