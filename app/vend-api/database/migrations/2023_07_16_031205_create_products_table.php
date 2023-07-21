@@ -22,7 +22,6 @@ return new class extends Migration
             $table->integer('cst',false,true);
             $table->integer('cfop',false,true);
             $table->double('weight_kg');
-            $table->timestamps();
         });
     }
 
