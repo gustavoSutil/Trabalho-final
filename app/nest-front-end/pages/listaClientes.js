@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import axios from 'axios';
+import Header from '../components/Header';
 
 const ListaEntidades = () => {
   const [entidades, setEntidades] = useState([]);
@@ -11,7 +12,7 @@ const ListaEntidades = () => {
         const response = await axios.get('http://127.0.0.1:8000/api/client/');
         setEntidades(response.data);
       } catch (error) {
-        console.error('Erro ao carregar as entidades:', error);
+        console.error('Erro:', error);
       }
     }
     fetchEntidades();
@@ -20,7 +21,7 @@ const ListaEntidades = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete('http://127.0.0.1:8000/api/client/'+id);
-      // Atualize a lista de entidades após a exclusão
+      
       setEntidades(entidades.filter((entidade) => entidade.id !== id));
     } catch (error) {
       console.error('Erro ao excluir a entidade:', error);
@@ -28,6 +29,8 @@ const ListaEntidades = () => {
   };
 
   return (
+    <div>
+    <Header></Header>
     <Container>
       <h1 className="my-4">Clientes</h1>
       <ListGroup>
@@ -66,6 +69,7 @@ const ListaEntidades = () => {
         ))}
       </ListGroup>
     </Container>
+    </div>
   );
 };
 

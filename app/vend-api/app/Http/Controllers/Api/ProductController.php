@@ -19,7 +19,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $this->product = Product::query()->paginate();
+        $this->product = Product::query()->get();
+        return $this->product;
     }
 
     /**
@@ -27,7 +28,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->product = new Product;
+        $this->product->name = $request->input('name');
+        $this->product->unitary_value = $request->input('unitary_value');
+        $this->product->aliquot_icms = $request->input('aliquot_icms');
+        $this->product->aliquot_ipi = $request->input('aliquot_ipi');
+        $this->product->aliquot_icms_st = $request->input('aliquot_icms_st');
+        $this->product->ncm_sh = $request->input('ncm_sh');
+        $this->product->cst = $request->input('cst');
+        $this->product->cfop = $request->input('cfop');
+        $this->product->weight_kg = $request->input('weight_kg');
+        $this->product->save();
+        return $this->product;
     }
 
     /**
@@ -35,7 +47,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $this->product = Product::query()->where('id','=',$id)->get();
+        return $this->product;
     }
 
     /**
@@ -51,6 +64,7 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->product = Product::select()->where('id','=',$id)->delete();
+        return $this->product;
     }
 }

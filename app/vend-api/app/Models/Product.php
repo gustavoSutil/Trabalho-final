@@ -20,5 +20,6 @@ class Product extends Model
         'cfop',
         'weight_kg'
     ];
-            //criar data
+    public $timestamps = false;
+
 }

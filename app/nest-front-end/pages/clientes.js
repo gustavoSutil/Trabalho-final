@@ -29,11 +29,10 @@ const Formulario = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/client/', formData);
-      console.log('Dados enviados com sucesso:', response.data);
-      // Faça algo com a resposta, como mostrar uma mensagem de sucesso ou redirecionar
+      console.log('sucesso:', response.data);
+      
     } catch (error) {
-      console.error('Erro ao enviar os dados:', error);
-      // Lide com o erro, exiba uma mensagem de erro ou faça outra ação
+      console.error('Erro:', error);
     }
   };
 

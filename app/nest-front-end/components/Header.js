@@ -7,16 +7,16 @@ const Header = () => {
     <header>
       <Navbar color="dark" dark expand="md">
         <Container>
-          <NavbarBrand href="/">Projeto integrador</NavbarBrand>
+          <NavbarBrand href="/clientes">Projeto integrador</NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Link href="../pages/clientes">
-                <NavLink>Home</NavLink>
+              <Link href="/clientes">
+                <NavLink>Clientes</NavLink>
               </Link>
             </NavItem>
             <NavItem>
-              <Link href="/outra-pagina">
-                <NavLink>Outra Página</NavLink>
+              <Link href="/listaClientes">
+                <NavLink>Lista Clientes</NavLink>
               </Link>
             </NavItem>
           </Nav>
